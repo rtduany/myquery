@@ -11,6 +11,9 @@ class Question(models.Model):
 	def __str__(self):
 		return self.question_text
 
+	def was_published_recently():
+		self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+
 class Answer(models.Model):
 	question = models.ForeignKey(Question)
 	answer_text = models.CharField(max_length=200)
