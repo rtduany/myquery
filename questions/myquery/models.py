@@ -21,3 +21,6 @@ class Answer(models.Model):
 
 	def __str__(self):
 		return self.answer_text
+
+	def was_answered_recently():
+		self.date_pub >= timezone.now() - datetime.timedelta(days=1)
